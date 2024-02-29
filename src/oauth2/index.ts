@@ -56,7 +56,7 @@ export class OAuth2Client {
 		options?: {
 			codeVerifier?: string;
 			credentials?: string;
-			authenticateWith?: "http_basic_auth" | "request_body";
+			authenticateWith?: "bearer_token" | "http_basic_auth" | "request_body";
 		}
 	): Promise<_TokenResponseBody> {
 		const body = new URLSearchParams();
@@ -77,7 +77,7 @@ export class OAuth2Client {
 		refreshToken: string,
 		options?: {
 			credentials?: string;
-			authenticateWith?: "http_basic_auth" | "request_body";
+			authenticateWith?: "bearer_token" | "http_basic_auth" | "request_body";
 			scopes?: string[];
 		}
 	): Promise<_TokenResponseBody> {
