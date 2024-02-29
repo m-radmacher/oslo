@@ -98,7 +98,7 @@ export class OAuth2Client {
 		body: URLSearchParams,
 		options?: {
 			credentials?: string;
-			authenticateWith?: "http_basic_auth" | "request_body" | "bearer_token";
+			authenticateWith?: "bearer_token" | "http_basic_auth" | "request_body";
 		}
 	): Promise<_TokenResponseBody> {
 		const headers = new Headers();

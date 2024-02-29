@@ -20,7 +20,7 @@ function validateAuthorizationCode<_TokenResponseBody extends TokenResponseBody>
 	options?: {
 		codeVerifier?: string;
 		credentials?: string;
-		authenticateWith?: "http_basic_auth" | "request_body";
+		authenticateWith?: "bearer_token" | "http_basic_auth" | "request_body";
 	}
 ): Promise<_TokenResponseBody>;
 ```

@@ -19,7 +19,7 @@ function refreshAccessToken<_TokenResponseBody extends TokenResponseBody>(
 	refreshToken: string,
 	options?: {
 		credentials?: string;
-		authenticateWith?: "http_basic_auth" | "request_body";
+		authenticateWith?: "bearer_token" | "http_basic_auth" | "request_body";
 		scopes?: string[];
 	}
 ): Promise<_TokenResponseBody>;
