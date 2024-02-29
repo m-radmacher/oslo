@@ -98,7 +98,7 @@ export class OAuth2Client {
 		body: URLSearchParams,
 		options?: {
 			credentials?: string;
-			authenticateWith?: "http_basic_auth" | "request_body";
+			authenticateWith?: "http_basic_auth" | "request_body" | "bearer_token";
 		}
 	): Promise<_TokenResponseBody> {
 		const headers = new Headers();
@@ -113,6 +113,8 @@ export class OAuth2Client {
 					new TextEncoder().encode(`${this.clientId}:${options.credentials}`)
 				);
 				headers.set("Authorization", `Basic ${encodedCredentials}`);
+			} else if (authenticateWith === "bearer_token") {
+				headers.set("Authorization", `Bearer ${options.credentials}`);
 			} else {
 				body.set("client_secret", options.credentials);
 			}
